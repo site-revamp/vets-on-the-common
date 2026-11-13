@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#72c8ca">
+<meta name="description" content="Independent veterinary care in Clapham Old Town. Personal consultations, diagnostics, surgery, a separate cat clinic and care for exotic pets.">
+<title>Vets on the Common | Independent Vets in Clapham</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--color-primary:#72c8ca;
+--color-primary-dark:#287f82;
+--color-primary-light:#bce8e7;
+--color-secondary:#727272;
+--color-secondary-dark:#454b4b;
+--color-secondary-light:#e8eeee;
+--color-accent:#e89b79;
+--color-heading:#183d40;
+--color-text:#414b4c;
+--color-text-muted:#727272;
+--color-background:#fff;
+--color-background-alt:#f1faf9;
+--color-surface:#fff;
+--color-surface-alt:#e7f4f2;
+--color-border:#dce9e7;
+--color-border-strong:#9acdca;
+--color-interactive:#176d70;
+--color-interactive-hover:#12585b;
+--color-focus:#174d50;
+--font-body:"Nunito Sans",sans-serif;
+--font-display:"DM Serif Display",Georgia,serif;
+--container:1180px;
+--radius:22px;
+--shadow:0 18px 55px rgba(24,61,64,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;color:var(--color-text);background:white;font-family:var(--font-body);font-size:17px;line-height:1.65}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px}
+.container{width:min(var(--container),calc(100% - 48px));margin:auto}
+h1,h2,h3,h4{color:var(--color-heading);line-height:1.12;margin-top:0}
+h1{font-size:clamp(46px,6.2vw,76px);letter-spacing:-.055em}
+h2{font-size:clamp(36px,4.5vw,54px);letter-spacing:-.04em}
+h3{font-size:25px;letter-spacing:-.025em}
+.display{font-family:var(--font-display);font-weight:400}
+.section{padding:108px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--color-primary-dark);font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.eyebrow:before{content:"";width:26px;height:2px;background:var(--color-primary-dark)}
+.section-intro{max-width:680px;margin-bottom:48px}
+.section-intro p{font-size:18px;color:var(--color-text-muted)}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;min-height:54px;padding:13px 24px;border:1px solid transparent;border-radius:100px;font-size:15px;font-weight:900;transition:.2s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{color:#103b3d;background:var(--color-primary)}
+.btn-primary:hover{background:var(--color-primary-light)}
+.btn-dark{color:white;background:var(--color-interactive)}
+.btn-dark:hover{background:var(--color-interactive-hover)}
+.btn-outline{border-color:var(--color-border-strong);color:var(--color-heading);background:transparent}
+.btn-outline:hover{background:var(--color-surface-alt)}
+.text-link{color:var(--color-interactive);font-weight:900}
+
+/* Header */
+.topline{background:var(--color-heading);color:white;font-size:12px}
+.topline-inner{display:flex;justify-content:space-between;align-items:center;min-height:36px;gap:16px}
+.topline a{color:white;font-weight:800}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--color-border)}
+.nav-wrap{display:flex;justify-content:space-between;align-items:center;min-height:82px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand-mark{display:grid;place-items:center;width:45px;height:45px;border-radius:50% 50% 50% 12px;background:var(--color-primary);color:var(--color-heading);font-family:var(--font-display);font-size:25px;transform:rotate(-7deg)}
+.brand-name{display:flex;flex-direction:column;line-height:1.05}
+.brand-name strong{color:var(--color-heading);font-size:16px;font-weight:900}
+.brand-name small{margin-top:5px;color:var(--color-text-muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:27px}
+.nav-links a{color:var(--color-heading);font-size:13px;font-weight:800}
+.nav-links a:hover{color:var(--color-primary-dark)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-actions .btn{min-height:46px;padding:10px 18px;font-size:13px}
+.menu-toggle{display:none;width:46px;height:46px;border:1px solid var(--color-border);border-radius:50%;color:var(--color-heading);background:white;font-size:23px;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:70px 0 86px;background:var(--color-background-alt)}
+.hero:before{content:"";position:absolute;top:-180px;right:-140px;width:550px;height:550px;border:1px solid rgba(40,127,130,.16);border-radius:50%;box-shadow:0 0 0 55px rgba(114,200,202,.07),0 0 0 110px rgba(114,200,202,.045)}
+.hero-grid{position:relative;display:grid;grid-template-columns:.94fr 1.06fr;align-items:center;gap:54px}
+.hero-copy{padding:25px 0}
+.hero-copy h1{max-width:620px;margin:20px 0 22px}
+.hero-copy h1 em{color:var(--color-primary-dark);font-style:normal;font-family:var(--font-display);font-weight:400}
+.hero-copy>p{max-width:510px;margin-bottom:30px;color:#586566;font-size:19px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-proof{display:flex;flex-wrap:wrap;gap:18px;margin-top:34px;color:var(--color-secondary-dark);font-size:13px;font-weight:800}
+.hero-proof span{display:flex;align-items:center;gap:7px}
+.proof-dot{width:7px;height:7px;border-radius:50%;background:var(--color-primary-dark)}
+.hero-visual{position:relative;min-height:530px}
+.hero-photo{position:absolute;inset:0 35px 20px 20px;overflow:hidden;border-radius:48% 48% 22px 22px;background:#dcebe8;box-shadow:var(--shadow)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(13,42,43,.26))}
+.hero-note{position:absolute;right:0;bottom:4px;z-index:2;width:210px;padding:22px;border-radius:18px;background:white;box-shadow:var(--shadow)}
+.hero-note strong{display:block;color:var(--color-heading);font-size:31px;line-height:1}
+.hero-note span{display:block;margin-top:9px;color:var(--color-text-muted);font-size:13px;line-height:1.4}
+.hero-stamp{position:absolute;top:34px;left:-4px;z-index:2;display:grid;place-items:center;width:104px;height:104px;border:1px solid white;border-radius:50%;background:var(--color-primary);color:var(--color-heading);text-align:center;font-size:11px;font-weight:900;line-height:1.2;letter-spacing:.08em;transform:rotate(-10deg)}
+
+/* Highlights */
+.proof-ribbon{background:var(--color-heading);color:white}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.proof-item{padding:27px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.16)}
+.proof-item:last-child{border:0}
+.proof-item strong{display:block;color:var(--color-primary-light);font-size:22px;line-height:1.2}
+.proof-item span{display:block;margin-top:6px;color:rgba(255,255,255,.78);font-size:12px}
+
+/* About / second image section */
+.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:80px}
+.story-image{position:relative;min-height:500px}
+.story-image img{width:100%;height:500px;object-fit:cover;border-radius:18px 150px 18px 18px;background:var(--color-surface-alt)}
+.story-tag{position:absolute;right:-24px;bottom:28px;max-width:220px;padding:20px 22px;border-radius:14px;background:var(--color-primary);color:var(--color-heading);font-weight:900;box-shadow:var(--shadow)}
+.story-copy h2{margin:18px 0 22px}
+.story-copy p{color:var(--color-text-muted)}
+.founders{display:flex;align-items:center;gap:14px;margin-top:26px}
+.founder-initials{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--color-surface-alt);color:var(--color-primary-dark);font-family:var(--font-display);font-size:22px}
+.founders strong{display:block;color:var(--color-heading)}
+.founders small{color:var(--color-text-muted)}
+
+/* Services */
+.services{background:var(--color-background-alt)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;overflow:hidden;border:1px solid var(--color-border);border-radius:var(--radius);background:var(--color-border)}
+.service{min-height:265px;padding:32px;background:white;transition:background .2s}
+.service:hover{background:#f8fdfc}
+.service-icon{display:grid;place-items:center;width:58px;height:58px;margin-bottom:24px;border-radius:18px 18px 18px 5px;background:var(--color-surface-alt);color:var(--color-primary-dark)}
+.service-icon svg{width:31px;height:31px}
+.service h3{margin-bottom:10px;font-size:21px}
+.service p{margin-bottom:15px;color:var(--color-text-muted);font-size:14px}
+.service a{color:var(--color-interactive);font-size:13px;font-weight:900}
+
+/* Cat section */
+.cat-feature{overflow:hidden;background:var(--color-heading);color:white}
+.cat-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:70px}
+.cat-copy h2{margin:18px 0;color:white}
+.cat-copy p{max-width:520px;color:rgba(255,255,255,.76)}
+.cat-copy .eyebrow{color:var(--color-primary-light)}
+.cat-copy .eyebrow:before{background:var(--color-primary-light)}
+.cat-points{display:grid;gap:12px;margin:28px 0 32px;padding:0;list-style:none}
+.cat-points li{display:flex;align-items:center;gap:12px;color:white;font-weight:800}
+.cat-points li:before{content:"✓";display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--color-primary);color:var(--color-heading);font-size:13px}
+.cat-image{position:relative}
+.cat-image img{width:100%;height:450px;object-fit:cover;border-radius:180px 18px 18px 18px}
+.cat-image:after{content:"A calmer visit for feline friends";position:absolute;right:-18px;bottom:25px;max-width:200px;padding:17px 20px;border-radius:12px;background:var(--color-primary);color:var(--color-heading);font-size:13px;font-weight:900}
+
+/* Consultation section */
+.experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.experience-photo img{width:100%;height:440px;object-fit:cover;border-radius:18px 18px 130px 18px}
+.experience-copy h2{margin:18px 0}
+.experience-copy p{color:var(--color-text-muted)}
+.experience-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.experience-list div{padding-top:14px;border-top:2px solid var(--color-primary)}
+.experience-list strong{display:block;color:var(--color-heading);font-size:15px}
+.experience-list span{color:var(--color-text-muted);font-size:13px}
+
+/* Exotic pets */
+.exotic-band{padding:70px 0;background:var(--color-surface-alt)}
+.exotic-inner{display:flex;justify-content:space-between;align-items:center;gap:36px}
+.exotic-inner h2{max-width:600px;margin:12px 0 0;font-size:clamp(30px,4vw,44px)}
+.animal-tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:9px;max-width:390px}
+.animal-tags span{padding:9px 15px;border:1px solid var(--color-border-strong);border-radius:100px;color:var(--color-heading);font-size:13px;font-weight:800;background:rgba(255,255,255,.6)}
+
+/* Contact */
+.visit{background:var(--color-background-alt)}
+.visit-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px}
+.visit-copy h2{margin:18px 0}
+.visit-copy p{color:var(--color-text-muted)}
+.visit-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.visit-card{padding:38px;border-radius:var(--radius);background:white;box-shadow:var(--shadow)}
+.visit-card h3{margin-bottom:25px}
+.detail{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--color-border)}
+.detail:last-of-type{border-bottom:0}
+.detail strong{color:var(--color-heading);font-size:13px}
+.detail span{color:var(--color-text-muted);font-size:14px}
+.emergency-note{margin-top:22px;padding:18px;border-left:3px solid var(--color-accent);background:#fff7f2;font-size:13px}
+.emergency-note strong{color:var(--color-heading)}
+
+/* Footer */
+.footer{padding:70px 0 100px;background:#143538;color:rgba(255,255,255,.75)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:60px}
+.footer .brand-name strong{color:white}
+.footer .brand-name small{color:rgba(255,255,255,.58)}
+.footer-about p{max-width:350px;margin-top:22px;font-size:14px}
+.footer h3{color:white;font-size:16px}
+.footer-links{display:grid;gap:10px}
+.footer-links a{font-size:14px}
+.footer-links a:hover{color:var(--color-primary-light)}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;margin-top:50px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);font-size:12px}
+
+/* Mobile */
+.mobile-cta{display:none}
+@media(max-width:1050px){
+.nav-links{gap:15px}
+.nav-links a{font-size:12px}
+.nav-actions .btn-outline{display:none}
+.hero-grid{gap:28px}
+.story-grid,.cat-grid,.experience-grid{gap:45px}
+}
+@media(max-width:800px){
+.container{width:min(100% - 36px,var(--container))}
+.section{padding:76px 0}
+.topline-inner{justify-content:center;text-align:center}
+.topline-inner span:first-child{display:none}
+.nav-wrap{min-height:72px}
+.menu-toggle{display:block}
+.nav-actions{margin-left:auto}
+.nav-actions .btn{min-height:42px;padding:9px 14px}
+.nav-links{position:absolute;top:72px;left:0;right:0;display:none;align-items:stretch;gap:0;padding:12px 24px 24px;border-bottom:1px solid var(--color-border);background:white}
+.nav-links.open{display:flex;flex-direction:column}
+.nav-links a{padding:13px 0;border-bottom:1px solid var(--color-border);font-size:15px}
+.hero{padding:48px 0 65px}
+.hero-grid,.story-grid,.cat-grid,.experience-grid,.visit-grid{grid-template-columns:1fr}
+.hero-copy{padding:0}
+.hero-visual{min-height:470px}
+.hero-photo{inset:0 20px 15px 10px}
+.hero-stamp{left:0}
+.proof-grid{grid-template-columns:1fr 1fr}
+.proof-item:nth-child(2){border-right:0}
+.proof-item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.16)}
+.story-image{min-height:auto}
+.story-image img{height:420px}
+.story-tag{right:10px}
+.service-grid{grid-template-columns:repeat(2,1fr)}
+.cat-image img{height:390px}
+.exotic-inner{align-items:flex-start;flex-direction:column}
+.animal-tags{justify-content:flex-start}
+.footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+.footer-about{grid-column:1/-1}
+}
+@media(max-width:520px){
+body{font-size:16px}
+.container{width:calc(100% - 32px)}
+.nav-actions .btn{font-size:12px}
+.brand-name strong{font-size:14px}
+.brand-mark{width:40px;height:40px}
+h1{font-size:46px}
+h2{font-size:36px}
+.hero-copy>p{font-size:17px}
+.hero-actions{display:grid;grid-template-columns:1fr}
+.hero-actions .btn{width:100%}
+.hero-visual{min-height:390px}
+.hero-note{width:175px;padding:16px}
+.hero-note strong{font-size:27px}
+.hero-stamp{width:84px;height:84px;font-size:9px}
+.proof-item{padding:21px 10px}
+.proof-item strong{font-size:19px}
+.proof-item span{font-size:11px}
+.story-image img{height:350px}
+.service-grid{grid-template-columns:1fr}
+.service{min-height:auto;padding:27px}
+.service-icon{margin-bottom:18px}
+.cat-image img{height:320px}
+.experience-photo img{height:330px}
+.experience-list{gap:12px}
+.visit-card{padding:25px 20px}
+.detail{grid-template-columns:90px 1fr}
+.footer-grid{grid-template-columns:1fr}
+.footer-about{grid-column:auto}
+.footer-bottom{flex-direction:column}
+.mobile-cta{position:fixed;z-index:100;right:0;bottom:0;left:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:11px 14px calc(11px + env(safe-area-inset-bottom));border-top:1px solid var(--color-border);background:rgba(255,255,255,.97);backdrop-filter:blur(14px)}
+.mobile-cta .btn{min-height:48px;padding:10px 12px;font-size:13px}
+body{padding-bottom:82px}
+.footer{padding-bottom:50px}
+}
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
+</style>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"VeterinaryCare",
+ "name":"Vets on the Common",
+ "url":"https://www.vetsonthecommon.com/",
+ "telephone":"+44-20-3053-0230",
+ "email":"info@vetsonthecommon.com",
+ "address":{
+   "@type":"PostalAddress",
+   "streetAddress":"3 Princes Close, Clapham Old Town",
+   "addressLocality":"London",
+   "postalCode":"SW4 0LG",
+   "addressCountry":"GB"
+ },
+ "openingHours":["Mo-Fr 09:00-18:30","Sa 09:00-13:00"]
+}
+</script>
+</head>
+
+<body>
+<div class="topline">
+ <div class="container topline-inner">
+  <span>Independent veterinary care in Clapham Old Town</span>
+  <a href="tel:+442030530230">Call the clinic: 020 3053 0230</a>
+ </div>
+</div>
+
+<header class="site-header">
+ <div class="container nav-wrap">
+  <a class="brand" href="#home" aria-label="Vets on the Common homepage">
+   <span class="brand-mark">V</span>
+   <span class="brand-name"><strong>Vets on the Common</strong><small>Independent veterinary care</small></span>
+  </a>
+  <nav class="nav-links" id="main-nav" aria-label="Main navigation">
+   <a href="#about">Our approach</a>
+   <a href="#services">Services</a>
+   <a href="#cats">Cat clinic</a>
+   <a href="#exotics">Exotic pets</a>
+   <a href="#visit">Find us</a>
+  </nav>
+  <div class="nav-actions">
+   <a class="btn btn-primary" href="https://www.vetsonthecommon.com/book-online">Book an appointment</a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+ </div>
+</header>
+
+<main id="home">
+<section class="hero">
+ <div class="container hero-grid">
+  <div class="hero-copy">
+   <span class="eyebrow">Your local independent vets</span>
+   <h1>Good care starts with <em>time to listen.</em></h1>
+   <p>Thoughtful, personal veterinary care for Clapham pets. Get to know the people caring for your companion, with consultations that give your questions room to be heard.</p>
+   <div class="hero-actions">
+    <a class="btn btn-dark" href="https://www.vetsonthecommon.com/book-online">Book an appointment ↗</a>
+    <a class="btn btn-outline" href="tel:+442030530230">Call 020 3053 0230</a>
+   </div>
+   <div class="hero-proof">
+    <span><i class="proof-dot"></i> Independent since 2021</span>
+    <span><i class="proof-dot"></i> 20-minute consultations</span>
+   </div>
+  </div>
+  <div class="hero-visual">
+   <div class="hero-photo">
+    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1100&q=85" alt="Golden retriever outdoors" fetchpriority="high">
+   </div>
+   <div class="hero-stamp">LOCAL<br>PEOPLE.<br>PERSONAL<br>PET CARE.</div>
+   <div class="hero-note"><strong>20 mins+</strong><span>Minimum length of regular consultations, so there is time for your concerns.</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="proof-ribbon">
+ <div class="container proof-grid">
+  <div class="proof-item"><strong>Independent</strong><span>Founded by vets, run by vets</span></div>
+  <div class="proof-item"><strong>20 minutes+</strong><span>Minimum regular consultation time</span></div>
+  <div class="proof-item"><strong>In-house</strong><span>Laboratory and diagnostic facilities</span></div>
+  <div class="proof-item"><strong>Clapham Old Town</strong><span>Part of your local community</span></div>
+ </div>
+</section>
+
+<!-- SECOND SECTION IMAGE: updated URL plus automatic fallback -->
+<section class="section" id="about">
+ <div class="container story-grid">
+  <div class="story-image">
+   <img
+    src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1000&q=85"
+    data-fallback="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1000&q=85"
+    alt="Veterinary professional caring for a dog"
+    loading="lazy">
+   <div class="story-tag">A familiar team. A personal approach.</div>
+  </div>
+  <div class="story-copy">
+   <span class="eyebrow">A different kind of vet practice</span>
+   <h2>Independent by choice. <span class="display">Personal by nature.</span></h2>
+   <p>Vets on the Common was created in 2021 by Dr Ellie and Dr Michael after years working in charity and private veterinary clinics.</p>
+   <p>They built an independent practice around communication, honesty and trust. As full-time vets who also manage the clinic, they keep the focus on the individual needs of pets and their people.</p>
+   <p>That means a welcoming team, continuity of care and time to talk through the decisions that matter to you.</p>
+   <div class="founders">
+    <div class="founder-initials">E + M</div>
+    <div><strong>Dr Ellie &amp; Dr Michael</strong><small>Founders, Vets on the Common</small></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section services" id="services">
+ <div class="container">
+  <div class="section-intro">
+   <span class="eyebrow">Care through every stage</span>
+   <h2>Support for the big moments and the everyday ones.</h2>
+   <p>From preventative care to diagnostics and treatment, explore the veterinary services available at our Clapham practice.</p>
+  </div>
+
+  <div class="service-grid">
+   <article class="service">
+    <div class="service-icon">
+     <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M24 7v34M7 24h34"/><circle cx="24" cy="24" r="17"/></svg>
+    </div>
+    <h3>Wellness &amp; prevention</h3>
+    <p>Regular health checks, vaccinations, parasite prevention and microchipping to help keep pets protected.</p>
+    <a href="https://www.vetsonthecommon.com/">Explore preventative care ↗</a>
+   </article>
+   <article class="service">
+    <div class="service-icon">
+     <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="20" r="12"/><path d="M29 29l11 11M15 20h10M20 15v10"/></svg>
+    </div>
+    <h3>Diagnostics</h3>
+    <p>In-house IDEXX laboratory, digital X-ray, ultrasound and microscopy to support investigation and diagnosis.</p>
+    <a href="https://www.vetsonthecommon.com/">Discover diagnostics ↗</a>
+   </article>
+   <article class="service">
+    <div class="service-icon">
+     <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 36L34 12M28 8l4-4 12 12-4 4M8 40l9-2-7-7-2 9z"/></svg>
+    </div>
+    <h3>Surgery &amp; dental care</h3>
+    <p>Routine operations, referral procedures and dental assessments for pets who need more support.</p>
+    <a href="https://www.vetsonthecommon.com/">Explore treatment options ↗</a>
+   </article>
+   <article class="service">
+    <div class="service-icon">
+     <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 19l-2-10 10 6M36 19l2-10-10 6"/><path d="M10 27c0-9 6-15 14-15s14 6 14 15-6 14-14 14-14-5-14-14z"/><path d="M18 26h.1M30 26h.1M20 33c2 2 6 2 8 0"/></svg>
+    </div>
+    <h3>Separate cat clinic</h3>
+    <p>Dedicated separate spaces for cats and dogs, designed to reduce stress for feline visitors.</p>
+    <a href="#cats">Discover the cat clinic ↗</a>
+   </article>
+   <article class="service">
+    <div class="service-icon">
+     <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 31l34-14-8 23-8-11-18 2zM25 29L15 42l-2-10"/></svg>
+    </div>
+    <h3>Pet travel</h3>
+    <p>Animal Health Certificates and Export Health Certificates for eligible journeys with your pet.</p>
+    <a href="https://www.vetsonthecommon.com/">Ask about pet travel ↗</a>
+   </article>
+   <article class="service">
+    <div class="service-icon">
+     <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M24 39s-15-8-15-20a8 8 0 0115-4 8 8 0 0115 4c0 12-15 20-15 20z"/><path d="M17 23h14M24 16v14"/></svg>
+    </div>
+    <h3>Care for more companions</h3>
+    <p>Care for rabbits, guinea pigs, birds, snakes and tortoises. Contact the team to discuss your pet's needs.</p>
+    <a href="#exotics">Discover exotic-pet care ↗</a>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section cat-feature" id="cats">
+ <div class="container cat-grid">
+  <div class="cat-copy">
+   <span class="eyebrow">A little more room to relax</span>
+   <h2>A calmer corner of the clinic, made for cats.</h2>
+   <p>For many cats, a trip to the vet can feel overwhelming. That's why the practice provides completely separate spaces for cats and dogs, helping reduce stress and anxiety for feline visitors.</p>
+   <ul class="cat-points">
+    <li>Separate cat and dog spaces</li>
+    <li>Thoughtful, individual attention</li>
+    <li>Time to discuss your cat's health</li>
+   </ul>
+   <a class="btn btn-primary" href="https://www.vetsonthecommon.com/book-online">Arrange a cat appointment ↗</a>
+  </div>
+  <div class="cat-image">
+   <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85" alt="Cat looking towards the camera" loading="lazy">
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container experience-grid">
+  <div class="experience-photo">
+   <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1000&q=85" alt="Veterinary professional caring for a dog" loading="lazy">
+  </div>
+  <div class="experience-copy">
+   <span class="eyebrow">Time, care and clear answers</span>
+   <h2>Because your questions matter, too.</h2>
+   <p>Appointments should give you the chance to explain what's changed, understand the options and make decisions with your veterinary team.</p>
+   <p>Regular consultations at Vets on the Common last a minimum of 20 minutes. The practice also has diagnostic facilities on site, including an in-house IDEXX laboratory, digital X-ray and ultrasound.</p>
+   <div class="experience-list">
+    <div><strong>20 minutes minimum</strong><span>For regular consultations</span></div>
+    <div><strong>In-house laboratory</strong><span>IDEXX diagnostic testing</span></div>
+    <div><strong>Digital X-ray</strong><span>On-site imaging facilities</span></div>
+    <div><strong>Ultrasound</strong><span>Additional diagnostic support</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="exotic-band" id="exotics">
+ <div class="container exotic-inner">
+  <div>
+   <span class="eyebrow">Not just cats and dogs</span>
+   <h2>Little paws, feathers, scales — every pet matters.</h2>
+  </div>
+  <div class="animal-tags">
+   <span>Rabbits</span><span>Guinea pigs</span><span>Birds</span><span>Snakes</span><span>Tortoises</span>
+  </div>
+ </div>
+</section>
+
+<section class="section visit" id="visit">
+ <div class="container visit-grid">
+  <div class="visit-copy">
+   <span class="eyebrow">Come and say hello</span>
+   <h2>Your local vet, just around the corner.</h2>
+   <p>Find Vets on the Common in Clapham Old Town. If you're new to the practice, call or use the online booking page to take the next step.</p>
+   <div class="visit-actions">
+    <a class="btn btn-dark" href="https://www.vetsonthecommon.com/book-online">Book online ↗</a>
+    <a class="btn btn-outline" href="mailto:info@vetsonthecommon.com">Email the team</a>
+   </div>
+  </div>
+  <div class="visit-card">
+   <h3>Plan your visit</h3>
+   <div class="detail"><strong>Address</strong><span>3 Princes Close, Clapham Old Town, London, SW4 0LG</span></div>
+   <div class="detail"><strong>Telephone</strong><span><a class="text-link" href="tel:+442030530230">020 3053 0230</a></span></div>
+   <div class="detail"><strong>Email</strong><span><a class="text-link" href="mailto:info@vetsonthecommon.com">info@vetsonthecommon.com</a></span></div>
+   <div class="detail"><strong>Weekdays</strong><span>Monday–Friday, 9:00am–6:30pm</span></div>
+   <div class="detail"><strong>Saturday</strong><span>9:00am–1:00pm</span></div>
+   <div class="emergency-note"><strong>When the practice is closed</strong><br>Out-of-hours clinic: Wolfe Vets Fulham. Telephone <a class="text-link" href="tel:+442030111205">020 3011 1205</a>. Contact the provider directly for emergency arrangements.</div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="footer">
+ <div class="container">
+  <div class="footer-grid">
+   <div class="footer-about">
+    <a class="brand" href="#home">
+     <span class="brand-mark">V</span>
+     <span class="brand-name"><strong>Vets on the Common</strong><small>Independent veterinary care</small></span>
+    </a>
+    <p>Independent veterinary care in Clapham Old Town, built around communication, honesty and trust.</p>
+   </div>
+   <div>
+    <h3>Explore</h3>
+    <div class="footer-links">
+     <a href="#about">Our approach</a>
+     <a href="#services">Veterinary services</a>
+     <a href="#cats">Separate cat clinic</a>
+     <a href="#exotics">Exotic pets</a>
+     <a href="#visit">Contact and opening hours</a>
+    </div>
+   </div>
+   <div>
+    <h3>Get in touch</h3>
+    <div class="footer-links">
+     <a href="tel:+442030530230">020 3053 0230</a>
+     <a href="mailto:info@vetsonthecommon.com">info@vetsonthecommon.com</a>
+     <a href="https://www.vetsonthecommon.com/book-online">Book online ↗</a>
+     <a href="https://www.vetsonthecommon.com/">Official website ↗</a>
+    </div>
+   </div>
+  </div>
+  <div class="footer-bottom">
+   <span>© <span id="year"></span> Vets on the Common. All rights reserved.</span>
+   <span>3 Princes Close, Clapham Old Town, London, SW4 0LG</span>
+  </div>
+ </div>
+</footer>
+
+<div class="mobile-cta" aria-label="Quick contact actions">
+ <a class="btn btn-outline" href="tel:+442030530230">Call the clinic</a>
+ <a class="btn btn-primary" href="https://www.vetsonthecommon.com/book-online">Book online</a>
+</div>
+
+<script>
+const menuToggle=document.getElementById("menu-toggle");
+const mainNav=document.getElementById("main-nav");
+
+menuToggle.addEventListener("click",()=>{
+ const isOpen=mainNav.classList.toggle("open");
+ menuToggle.setAttribute("aria-expanded",String(isOpen));
+ menuToggle.setAttribute("aria-label",isOpen?"Close navigation menu":"Open navigation menu");
+ menuToggle.textContent=isOpen?"×":"☰";
+});
+
+mainNav.querySelectorAll("a").forEach(link=>{
+ link.addEventListener("click",()=>{
+  mainNav.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded","false");
+  menuToggle.setAttribute("aria-label","Open navigation menu");
+  menuToggle.textContent="☰";
+ });
+});
+
+/* Automatic image fallback: try the alternative URL if an image fails. */
+document.querySelectorAll("img[data-fallback]").forEach(img=>{
+ img.addEventListener("error",()=>{
+  if(img.dataset.fallback && img.src!==img.dataset.fallback){
+   img.src=img.dataset.fallback;
+   img.removeAttribute("data-fallback");
+  }
+ });
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
